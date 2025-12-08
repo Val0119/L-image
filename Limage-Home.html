@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Image - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+<header>
+    <h1>L'Image</h1>
+  <nav>
+    <a href="Limage-Home.html"class="active">Home</a>
+    <a href="Limage-Features.html">Features</a>
+    <a href="Limage-Publications.html">Publications</a>
+  </nav>
+  </header>
+<section>
+    <h1>L'image: Larry's Image Program</h1>
+<h2>
+  L'image is a full-featured, highly flexible system for interactive viewing and quantitative processing of Cameca ion images (e.g., produced by the NanoSIMS and ims-1280 ion microprobes). It is built on the <a href="https://www.nv5geospatialsoftware.com/Products/IDL"> IDL </a> programming language* and provides the ability to quickly investigate and process image data and produce high-quality output for presentation or publication. It runs on both PC and Mac versions of IDL, including free IDL Virutal Machine technology.
+</h2>
+<div></div>
+<h2>
+L'image is developed by Larry Nittler and marketed by the Carnegie Institution of Washington.
+</h2>
+<div></div>
+<h2>
+For more information please contact Larry Nittler at <b style="font-weight: bold;"> lnittler at asu.edu </b>
+</h2>
+<div></div>
+<h2>
+*A PV-WAVE version is available , but is no longer being actively developed.
+</h2>
+
+<img src="Limage.png" alt="Limage" class="side-image">
+
+</section>
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const numberOfParticles = 150;
+
+    class Particle {
+      constructor() {
+        this.reset();
+        this.y = Math.random() * canvas.height; // Start at a random y position initially
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + Math.random() * 50; // Start just below the screen
+        this.radius = Math.random() * 3 + 1;
+        this.speedY = Math.random() * 1 + 0.5; // Upward speed
+        this.opacity = this.radius / 4; // Smaller particles are more transparent
+        this.wobble = Math.random() * 0.02 + 0.01; // Wobble speed
+        this.wobbleAngle = Math.random() * Math.PI * 2;
+      }
+
+      update() {
+        this.y -= this.speedY;
+        this.wobbleAngle += this.wobble;
+        this.x += Math.sin(this.wobbleAngle) * 0.5; // Apply horizontal wobble
+
+        if (this.y < -this.radius) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(173, 216, 230, ${this.opacity})`; // Light blue
+        ctx.shadowColor = 'rgba(0, 191, 255, 0.7)'; // Cyan glow
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.shadowBlur = 0;
+
+      for (const particle of particles) {
+        particle.update();
+        particle.draw();
+      }
+
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', init);
+    init();
+    animate();
+  </script>
+</body>
+ <footer>
+    <p>&copy; 2025 L'Image </p>
+  </footer>
+</html>
