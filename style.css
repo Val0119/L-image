@@ -1,11 +1,24 @@
-body, html {
+
+/* Copyright (c) 2025 by Gavin | Solo (https://codepen.io/Sorodyn/pen/qEdvzaE)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+ 
+body, html{
   margin: 0;
   padding: 0;
   min-height: 100%;
   overflow-x: hidden;
   background-color: transparent;
   font-family: Arial, sans-serif;
-  color: rgb(38, 191, 252);
+  color: rgb(146, 144, 144);
+  overflow-x: hidden;
 }
 
 #particle-canvas {
@@ -19,13 +32,13 @@ body, html {
 }
 
 a:link {
-  color: #0037ff;
+  color: black;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #0037ff !important;
+  color: black !important;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -33,15 +46,15 @@ a:visited {
 header nav a,
 header nav a:link,
 header nav a:visited {
-  color: rgb(38, 191, 252) !important;
+  color:  rgb(146, 144, 144) !important;
   text-decoration: none !important;
   border-bottom: none !important;
 }
 
 header nav a:hover,
 header nav a.active {
-  color: #0037ff !important;
-  border-bottom: 2px solid #0037ff !important;
+  color: black !important;
+  border-bottom: 2px solid #000000 !important;
 }
 .side-image{
   object-fit: fill;
@@ -80,11 +93,12 @@ header {
 header h1 {
   margin: 0;
   font-size: 3rem;
-  font-family: cursive;
-  color: rgb(38, 191, 252);
+  font-family: 'Lucida Sans', cursive;
+  color:  rgb(146, 144, 144);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 header nav {
+  font-size: 2rem;
   display: flex;
   gap: 15px;
 }
@@ -97,21 +111,23 @@ header nav a {
 }
 header nav a:hover,
 header nav a.active {
-  color: #ffd700;
-  border-bottom: 2px solid #ffd700;
+  color: #000000;
+  border-bottom: 2px solid #000000;
 }
 
 section {
-  padding: 3rem 5vw;
-  max-width: 1200px;
+  padding: 3rem 3vw;
+  max-width: 1500px;
   margin: 3rem auto;
   border-radius: 10px;
   text-align: justify;
+  font-size: 1rem;
 }
 section h1 {
   padding-bottom: 0.5rem;
   margin-top: 0;
   text-align: center !important;
+  color: black;
   font-size: 5rem;
 }
 section h2 {
@@ -122,70 +138,26 @@ section h2 {
   text-align: left;
 }
 section h3 {
+  padding-bottom: 0.2rem;
+  margin-top: 0;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color:black;
+}
+section h4 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.5rem;
   margin-top: 0;
-  text-align: justify;
-  font-size: 1rem;
+  text-align: left;
+  font-size: 1.5rem;
   font-weight: normal;
-}
-section h4 {
-  padding-bottom: 0.5rem;
-  margin-top: 0;
-  text-align: center;
-  font-size: 2rem;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-
-.logo {
-  height: 70px;       
-  width: auto;
-  max-width: 160px;   
-  object-fit: contain;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  color: #0037ff;
+  color: black;
   border-top: 2px solid rgba(255, 255, 255, 0.3);
   margin-top: 2rem;
 }
-
-.pub-btn {
-  margin-left: auto;
-  background-color: var(--red-asu);
-  border: 1px solid var(--red-asu);
-  border-radius: 3px;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 15px;
-}
-.pub-btn-cont{
-  display: flex;
-}
-.pub-btn a:link{
-  color: white;
-}
-.pub-btn a:visited{
-  color: white;
-}
-.pub-btn a:link:hover{
-  color: black
-}
-.pub-btn a:visited:hover{
-  color:black;
-}
-.pub-btn:hover{
-  background-color:var(--yellow-asu);
-}
-

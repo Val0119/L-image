@@ -21,43 +21,66 @@
   </header>
 <section>
     <h1>Features</h1>
-<h2>
+<h3>
 File handling/image correction
-</h2>
+</h3>
 
 <img src="Limage 2.png" class="wrap-image" alt="Stitch">
 
 <ul>
-  <li><h3>Load .im files created by Cameca ims-xf, ims-1xxx and NanoSIMS ion probes. Load entire data file or selected species/ cycles. Optional re-binning of multiple image cycles into fewer number of cycles to increase processing speed.</h3></li>
+  <li><h4>Load .im files created by Cameca ims-xf, ims-1xxx and NanoSIMS ion probes. Load entire data file or selected species/ cycles. Optional re-binning of multiple image cycles into fewer number of cycles to increase processing speed.</h3></li>
 
-  <li><h3>Automatic alignment of image cycles to correct for image drift.</h3></li>
+  <li><h4>Automatic alignment of image cycles to correct for image drift.</h4></li>
 
-  <li><h3>Correct images for EM deadtime and QSA effects on a pixel-by-pixel basis.</h3></li>
+  <li><h4>Correct images for EM deadtime and QSA effects on a pixel-by-pixel basis.</h4></li>
 
-  <li><h3>Stitching of image files.</h3></li>
+  <li><h4>Stitching of image files.</h4></li>
 </ul>
-<div style="margin-bottom: 200px;"></div>
+<div style="margin-bottom: 100px;"></div>
 
-<h2 style="text-align: right;">
+<h3 style="text-align: right;">
 Display/output
-</h2>
-
-<img src="Limage 2.png" class="wrap-image2" alt="Stitch">
+</h3>
+<div style="margin-bottom: -50px;"></div>
 
 <ul>
-  <li><h3>Interactive display of images: view images for individual cycles or integrated over many cycles, mouse-driven zooming, image smoothing, linear or logarithmic color scales, pixel intensities displayed as counts or counts/second, animations of individual cycle images, manually set minimum/maximum pixel intensities to display, optionally rotate/flip images.</h3></li>
+  <li><h4>Interactive display of images: view images for individual cycles or integrated over many cycles, mouse-driven zooming, image smoothing, linear or logarithmic color scales, pixel intensities displayed as counts or counts/second, animations of individual cycle images, manually set minimum/maximum pixel intensities to display, optionally rotate/flip images.</h4></li>
+  <img src="Limage 3.png" class="wrap-image2" alt="Stitch">
 
-  <li><h3>Interactive image profiling: Mouse-driven interface to define line profiles. Semi-automatic spatial resolution estimation from line profiles. High-quality plot outputs and data export to spreadsheet.</h3></li>
+  <li><h4>Interactive image profiling: Mouse-driven interface to define line profiles. Semi-automatic spatial resolution estimation from line profiles. High-quality plot outputs and data export to spreadsheet.</h4></li>
+  <li><h4>Image depth profiling (intensities for selected pixel over multiple cycles).</h4></li>
 
-  <li><h3>Image depth profiling (intensities for selected pixel over multiple cycles).</h3></li>
-
-  <li><h3>Flexible control over color tables.</h3></li>
-  <li><h3>Display/export pseudo-3d representations of data (contour plots, surface plots).</h3></li>
-  <li><h3>Combine images/plots from various tasks and multiple image files into single-page displays.</h3></li>
-  <li><h3>Generation of RGB color composites of elemental/isotopic/ratio images</h3></li>
-  <li><h3>Flexible Output: Export images with or without color bars, scale bars to popular formats (JPEG, TIFF, MetaFile, etc) or copy to Windows clipboard. Optionally overlay ROI outlines. Save processed images as .im files for future analysis in L’image.</h3></li>
+  <li><h4>Flexible control over color tables.</h4></li>
+  <li><h4>Display/export pseudo-3d representations of data (contour plots, surface plots).</h4></li>
+  <li><h4>Combine images/plots from various tasks and multiple image files into single-page displays.</h4></li>
+  <li><h4>Generation of RGB color composites of elemental/isotopic/ratio images</h4></li>
+  <li><h4>Flexible Output: Export images with or without color bars, scale bars to popular formats (JPEG, TIFF, MetaFile, etc) or copy to Windows clipboard. Optionally overlay ROI outlines. Save processed images as .im files for future analysis in L’image.</h4></li>
   
 </ul>
+<div style="margin-bottom: 50px;"></div>
+<h3>
+Ratio Images
+</h3>
+<div style="margin-bottom: 50px;"></div>
+<img src="Limage 4.png" class="wrap-image" alt="Stitch">
+<ul>
+  
+  <div style="margin-bottom: 150px;"></div>
+  <li><h4>Generate pixel-by-pixel ratio images and associated error images with flexible definition of parameters. Mouse-driven interactive viewing of data including zooming, ROI outline overlay, manual selection of maximum/minimum intensities, pixel value histogram plotting. Printing and exporting of ratio images to wide variety of formats. </h4></li>
+  <li><h4>Highly flexible profiling of ratio images.</h4></li>
+  
+</ul>
+<div style="margin-bottom: 250px;"></div>
+<h3 style="text-align: right;">
+Quantitative Processing
+</h3>
+
+<img src="Limage 5.png" class="wrap-image2" alt="Stitch">
+
+  <li><h4>Region of Interest (ROI) definition: Segment image into ROIs for quantitative analysis. Define ROIs manually with mouse or automatically by threshold, automatic particle finding or tiling entire image with square-/hexagon-shaped regions. Combine ROIs using logic. Plot/export count rates for individual cycles/species for given ROI. </h4></li>
+  <li><h4>Ratio Calculation: Calculate isotopic or elemental ratios for ROIs, including flexible control of drift correction (for peak jumping measurements) and correction for EM background. Interactively interrogate data for single ROIs or generate scatter plots or histograms of results for multiple ROIs. Flexible output of data to spreadsheet format and generation of high-quality plots. Combination of data from multiple image files into easy-to-use databases.</h4></li>
+  <li><h4>“Pixel Plot:” Make scatter plots of individual pixel intensities for both ion images and ratio images. User can select groups of pixels from plot and use as ROI definition.</h4></li>
+  <li><h4>Automation of most processing tasks for a set of image files without user intervention.</h4></li>
 
 
 </section>
@@ -73,23 +96,23 @@ Display/output
     class Particle {
       constructor() {
         this.reset();
-        this.y = Math.random() * canvas.height; // Start at a random y position initially
+        this.y = Math.random() * canvas.height; 
       }
 
       reset() {
         this.x = Math.random() * canvas.width;
-        this.y = canvas.height + Math.random() * 50; // Start just below the screen
+        this.y = canvas.height + Math.random() * 50; 
         this.radius = Math.random() * 3 + 1;
-        this.speedY = Math.random() * 1 + 0.5; // Upward speed
-        this.opacity = this.radius / 4; // Smaller particles are more transparent
-        this.wobble = Math.random() * 0.02 + 0.01; // Wobble speed
+        this.speedY = Math.random() * 1 + 0.5; 
+        this.opacity = this.radius / 4; 
+        this.wobble = Math.random() * 0.02 + 0.01; 
         this.wobbleAngle = Math.random() * Math.PI * 2;
       }
 
       update() {
         this.y -= this.speedY;
         this.wobbleAngle += this.wobble;
-        this.x += Math.sin(this.wobbleAngle) * 0.5; // Apply horizontal wobble
+        this.x += Math.sin(this.wobbleAngle) * 0.5; 
 
         if (this.y < -this.radius) {
           this.reset();
@@ -99,9 +122,9 @@ Display/output
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(173, 216, 230, ${this.opacity})`; // Light blue
-        ctx.shadowColor = 'rgba(0, 191, 255, 0.7)'; // Cyan glow
-        ctx.shadowBlur = 10;
+        ctx.fillStyle = `rgba(180, 180, 180, ${this.opacity})`;   
+        ctx.shadowColor = 'rgba(0, 0, 0, 1)';          
+        ctx.shadowBlur = 35;    
         ctx.fill();
         ctx.closePath();
       }
@@ -133,4 +156,5 @@ Display/output
     animate();
   </script>
 </body>
+
 </html>

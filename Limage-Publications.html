@@ -15,17 +15,17 @@
     <h1>L'Image</h1>
   <nav>
     <a href="Limage-Home.html" >Home</a>
-    <a href="Limage-Features.html"class="active">Features</a>
-    <a href="Limage-Publications.html">Publications</a>
+    <a href="Limage-Features.html">Features</a>
+    <a href="Limage-Publications.html"class="active">Publications</a>
   </nav>
   </header>
  <section>
-    <h4>Scientific Publications that use L'image (2005-)</h4>
+    <h3>Scientific Publications that use L'image (2005-)</h3>
     <h3>(incomplete; please let me know of omissions! lnittler at asu.edu)</h3>
     
     <h2>Last updated: December 18, 2014</h2>
 
-    <ul>
+  <h4>
   <li>Vollmer C., Kepaptsoglou D., Leitner J., Busemann H., Spring N. H., Ramasse Q. M., Hoppe P., and Nittler L. R., 2014. Proceedings of the National Academy of Sciences, in press, doi:10.1073/pnas.1408206111</li>
   <li>Westphal A. J., Stroud R. M., plus 64 co-authors, 2014. Science,345(6198), 786-791, doi: 10.1126/science.1252496</li>
   <li>Davidson, J., Busemann, H., Nittler, L. R., Alexander, C. M. O’D., Orthous-Daunay, F.-R., Franchi, I. A., and Hoppe, P., 2014. Geochimica et Cosmochimica Acta 139, 248-266.</li>
@@ -52,12 +52,12 @@
   <li>Qin, L., Nittler, L. R., Alexander, C. M. O’D., Wang, J., Stadermann, F. J., and Carlson, R. W., 2011. Geochimica et Cosmochimica Acta 75, 629-644.</li>
   <li>Zega, T. J., Alexander, C. M. O’D., Nittler, L. R., and Stroud, R. M., 2011. Astrophysical Journal 730, 83-92.</li>
   <li>Alexander, C. M. O’D., Newsome, S. D., Fogel, M. L., Nittler, L. R., Busemann, H., and Cody, G. D., 2010. Geochimica et Cosmochimica Acta 74, 4417-4437.</li>
-</ul>
+  </h4>
 
   </section>
 
   <footer>
-    <p>&copy; 2025 L'group </p>
+    <p>&copy; 2025 L'Image </p>
   </footer>
   
 <script>
@@ -69,23 +69,23 @@
     class Particle {
       constructor() {
         this.reset();
-        this.y = Math.random() * canvas.height; // Start at a random y position initially
+        this.y = Math.random() * canvas.height; 
       }
 
       reset() {
         this.x = Math.random() * canvas.width;
-        this.y = canvas.height + Math.random() * 50; // Start just below the screen
+        this.y = canvas.height + Math.random() * 50; 
         this.radius = Math.random() * 3 + 1;
-        this.speedY = Math.random() * 1 + 0.5; // Upward speed
-        this.opacity = this.radius / 4; // Smaller particles are more transparent
-        this.wobble = Math.random() * 0.02 + 0.01; // Wobble speed
+        this.speedY = Math.random() * 1 + 0.5;
+        this.opacity = this.radius / 4; 
+        this.wobble = Math.random() * 0.02 + 0.01; 
         this.wobbleAngle = Math.random() * Math.PI * 2;
       }
 
       update() {
         this.y -= this.speedY;
         this.wobbleAngle += this.wobble;
-        this.x += Math.sin(this.wobbleAngle) * 0.5; // Apply horizontal wobble
+        this.x += Math.sin(this.wobbleAngle) * 0.5; 
 
         if (this.y < -this.radius) {
           this.reset();
@@ -95,9 +95,9 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(173, 216, 230, ${this.opacity})`; // Light blue
-        ctx.shadowColor = 'rgba(0, 191, 255, 0.7)'; // Cyan glow
-        ctx.shadowBlur = 10;
+        ctx.fillStyle = `rgba(180, 180, 180, ${this.opacity})`;   
+        ctx.shadowColor = 'rgba(0, 0, 0, 1)';          
+        ctx.shadowBlur = 35;    
         ctx.fill();
         ctx.closePath();
       }
@@ -127,7 +127,6 @@
     window.addEventListener('resize', init);
     init();
     animate();
-  </script>\
+  </script>
 </body>
 </html>
-
