@@ -56,6 +56,25 @@ header nav a.active {
   color: black !important;
   border-bottom: 2px solid #000000 !important;
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 70px;       
+  width: auto;
+  max-width: 160px;   
+  object-fit: contain;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+
+
 .side-image{
   object-fit: fill;
   width: 100%;
